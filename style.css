@@ -303,7 +303,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
   #MainCurrentTempture {
-    font-size: medium;
+    font-size: 35px;
   }
   #mainImage {
     width: 35px;
