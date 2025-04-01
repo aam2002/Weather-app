@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+body {
+  background-color: rgba(0, 36, 82, 0.74);
+}
+.mainContainer {
+  width: 50%;
+  margin: auto;
+}
+.locationBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 60px;
+  background-color: rgb(9, 55, 104);
+}
+.locationBox .location_input #locationInput {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  width: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: large;
+  color: rgb(202, 212, 222);
+}
+
+.locationBox .location_input {
+  display: flex;
+  width: 100%;
+}
+.mainContainer .TodayQuickInfoBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: aqua;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.mainContainer .TodayQuickInfoBox #leftMainInfo,
+#rightMainInfo {
+  width: 50%;
+  box-sizing: border-box;
+}
+#leftMainInfo p:first-child {
+  font-size: large;
+}
+#leftMainInfo #MainCurrentTempture {
+  display: flex;
+  align-items: center;
+}
+#MainCurrentTempture {
+  font-size: 70px;
+}
+#MainCurrentTempture span {
+  display: flex;
+}
+#rightMainInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  font-size: x-large;
+  justify-content: center;
+}
+
+.heading {
+  margin: 10px 0px 0px 5px;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: large;
+}
+#myChart {
+  margin: 10px 0px;
+}
+#hourlyForecastBox {
+  display: flex;
+  overflow: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  background-color: rgb(0 36 82);
+  margin: 10px 0px;
+  border-radius: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#hourlyForecastBox::-webkit-scrollbar {
+  display: none;
+}
+.tempraturHourForCast {
+  margin: 20px;
+}
+.tempraturHourForCast p {
+  min-width: max-content;
+  padding: 5px 0px;
+}
+#FiveDayBox {
+  margin: 10px 0px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.fiveDayContent {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: rgb(0 36 82);
+  margin: 0px;
+  padding: 10px;
+  border-radius: 5px;
+  align-items: center;
+}
+.fiveDayContent span:first-child {
+  width: 60%;
+}
+.fiveDayContent:not(:first-child, :last-child) {
+  margin: 5px 0px;
+}
+.CurrentConditonBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-content: center;
+  margin: 10px 0px;
+  row-gap: 0px;
+  column-gap: 10px;
+}
+
+#windBox,
+#humidityBox,
+#uvIndexBox,
+#pressureBox {
+  box-sizing: border-box;
+  height: 250px;
+  background-color: rgb(0 36 82);
+  margin: 0px 0px 10px 0px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+#pressureBox.full-width {
+  grid-column: 1 / -1;
+}
+
+#humidityBar {
+  height: 100px;
+  width: 25px;
+  background-color: #ffe56a;
+  border-radius: 50px;
+}
+#humidityBarBox,
+#uvBarBox {
+  position: relative;
+  top: 0%;
+}
+#humidityBarValue {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: 30px;
+  width: 25px;
+  border-radius: 50px;
+  background-color: #c7ac01;
+}
+.visualRep {
+  margin: auto;
+  text-align: center;
+}
+.visualRep-pressure {
+  margin: auto 0px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+#uvBar {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+  background-color: rgb(249, 245, 132);
+}
+#uvBarValue {
+  height: 50px;
+  width: 50px;
+  background-color: rgb(255, 153, 0);
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#pressureBarBox {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  top: 0%;
+}
+#pressureBar {
+  margin: 5px;
+  height: 25px;
+  background-color: rgb(214, 244, 255);
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+#pressureBarValue {
+  margin: 5px;
+  height: 25px;
+  background-color: rgb(118, 197, 226);
+  border-radius: 50px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0%;
+  width: 50%;
+}
+.font-big {
+  font-size: larger;
+}
+
+#HourlyWindBox,
+#HourlyHumidityBox,
+#precipitationProbabilityBox {
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  border-radius: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.HourlyHumidityBox,
+.precipitationProbabilityBox {
+  height: 200px;
+  align-items: flex-end;
+}
+.headingHight {
+  padding: 20px 0px 0px 20px;
+}
+.hourForecast {
+  margin: 20px;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hourForecast p {
+  padding-top: 5px;
+  color: white;
+  min-width: max-content;
+}
+.mainInfo {
+  background-color: rgb(0 36 82);
+  margin: 10px 0px;
+  border-radius: 20px;
+}
+.hourHumidityBar {
+  width: 20px;
+  background-color: #f4d403;
+  height: 100px;
+  margin: auto;
+  border-radius: 5px;
+}
+.hourPrecipitationProbabilityBar {
+  width: 20px;
+  background-color: #83cfff;
+  height: 100px;
+  margin: auto;
+  border-radius: 5px;
+}
+.empty {
+  width: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.315);
+  background-color: transparent;
+  height: 100px;
+  margin: auto;
+  border-radius: 5px;
+}
+@media screen and (max-width: 1024px) {
+  .mainContainer {
+    width: 90%;
+  }
+  .CurrentConditonBox {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

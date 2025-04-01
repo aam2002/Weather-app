@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Weather-App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="mainContainer">
+      <div class="locationBox">
+        <span class="location_input">
+          <img src="icons/location.svg" alt="location" />
+          <input type="text" value="Delhi, India" id="locationInput" />
+        </span>
+        <img src="icons/search.svg" alt="search" id="search" />
+      </div>
+      <div class="TodayQuickInfoBox">
+        <div id="leftMainInfo">
+          <p>Now</p>
+          <p id="MainCurrentTempture">
+            <span> <span id="tempMain"></span>&deg;</span>
+            <span>
+              <img
+                src="icons/tomorrow_icons/10001.png"
+                alt="image"
+                id="mainImage"
+              />
+            </span>
+          </p>
+        </div>
+        <div id="rightMainInfo">
+          <div id="todayHighBox">
+            <p>
+              <span> High: </span>
+              <span> <span id="todayHigh">44</span>&deg;</span>
+            </p>
+          </div>
+          <div id="toadyLowBox">
+            <p>
+              <span> Low: </span>
+              <span> <span id="todayLow">44</span>&deg;</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <p class="heading">60-Minuit Forecast</p>
+      <div class="MinuitForecastBox" id="MinuitForecastBox">
+        <canvas id="myChart" style="max-width: 100%"></canvas>
+      </div>
+      <p class="heading">Hourly Forecast</p>
+      <div class="hourlyForecastBox" id="hourlyForecastBox"></div>
+      <p class="heading">5-day forcast</p>
+      <div class="FiveDayBox" id="FiveDayBox"></div>
+      <p class="heading">Current Condition</p>
+      <div class="CurrentConditonBox" id="CurrentConditonBox">
+        <div id="windBox">
+          <p class="font-big">Wind</p>
+          <div class="visualRep">
+            <p style="text-align: center">N</p>
+            <img
+              src="icons/direction.svg"
+              alt=""
+              height="70px"
+              id="currDirection"
+            />
+          </div>
+          <p class="font-big"><span id="speed">8</span> km/h</p>
+        </div>
+        <div id="humidityBox">
+          <p class="font-big">Humidity</p>
+          <div class="visualRep">
+            <p>100</p>
+            <div id="humidityBarBox">
+              <div id="humidityBar"></div>
+              <div id="humidityBarValue"></div>
+            </div>
+            <p>0</p>
+          </div>
+          <p class="font-big">
+            <span id="humidityPercentage">19</span>&percnt;
+          </p>
+        </div>
+        <div id="uvIndexBox">
+          <p class="font-big">Uv index</p>
+          <div class="visualRep">
+            <p>11+</p>
+            <div id="uvBarBox">
+              <div id="uvBar"></div>
+              <div id="uvBarValue">
+                <p>0</p>
+              </div>
+            </div>
+          </div>
+          <span id="UvValue" class="font-big">5</span>
+        </div>
+        <div id="pressureBox">
+          <p class="font-big">Pressure</p>
+          <div class="visualRep-pressure">
+            <span>Low</span>
+            <div id="pressureBarBox">
+              <div id="pressureBar"></div>
+              <div id="pressureBarValue"></div>
+            </div>
+            <span>High</span>
+          </div>
+          <p class="font-big"><span id="pressureValue">1012</span> mBar</p>
+        </div>
+      </div>
+      <p class="heading">Hourly Wind Forecast</p>
+      <div class="mainInfo">
+        <p class="heading headingHight">
+          Todays Average Wind : <span id="averageWindValue"></span> km/s
+        </p>
+        <div class="HourlyWindBox" id="HourlyWindBox"></div>
+      </div>
+      <p class="heading">Hourly Humidity Forecast</p>
+      <div class="mainInfo">
+        <p class="heading headingHight">
+          Todays Higest Humidity :
+          <span id="heightHumidityValue"></span>&percnt;
+        </p>
+        <div class="HourlyHumidityBox" id="HourlyHumidityBox"></div>
+      </div>
+      <p class="heading">Hourly Humidity Forecast</p>
+      <div class="mainInfo">
+        <p class="heading headingHight">
+          Todays Precipitation Probability :
+          <span id="precipitationProbabilityValue"></span>&percnt;
+        </p>
+        <div
+          class="precipitationProbabilityBox"
+          id="precipitationProbabilityBox"
+        ></div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
